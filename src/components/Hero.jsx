@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Typed from 'typed.js';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaArrowRight, FaEnvelope } from 'react-icons/fa';
+import { FaArrowRight, FaWhatsapp } from 'react-icons/fa';
 import portfolioData from '../data/portfolioData';
 
 const Hero = () => {
@@ -46,22 +46,9 @@ const Hero = () => {
               <a href="#projects" className="btn-primary-modern">
                 View Projects <FaArrowRight />
               </a>
-              <a href="#contact" className="btn-secondary-modern">
-                <FaEnvelope /> Contact
+              <a href="https://wa.me/96179116139" className="btn-secondary-modern" target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp /> Contact
               </a>
-              <div className="hero-social-modern">
-                {portfolioData.hero.social.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="social-icon-modern"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {link.icon === 'github' ? <FaGithub /> : <FaLinkedin />}
-                  </a>
-                ))}
-              </div>
             </div>
           </motion.div>
 
