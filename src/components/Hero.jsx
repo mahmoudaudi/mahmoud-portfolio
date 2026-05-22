@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Typed from 'typed.js';
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaWhatsapp } from 'react-icons/fa';
+import { FaArrowRight, FaEnvelope } from 'react-icons/fa';
 import portfolioData from '../data/portfolioData';
 
 const Hero = () => {
@@ -47,7 +47,7 @@ const Hero = () => {
                 View Projects <FaArrowRight />
               </a>
               <a href="#contact" className="btn-secondary-modern">
-                <FaWhatsapp /> Contact
+                <FaEnvelope /> Contact
               </a>
             </div>
           </motion.div>
