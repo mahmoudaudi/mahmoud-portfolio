@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedinIn, FaEnvelope, FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn, FaEnvelope, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import portfolioData from '../data/portfolioData';
 
 const Footer = () => {
@@ -51,6 +51,9 @@ const Footer = () => {
               </a>
               <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
                 <FaInstagram />
+              </a>
+              <a href="https://wa.me/96179116139" target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp />
               </a>
               <a href={`mailto:${contact.email}`}>
                 <FaEnvelope />
