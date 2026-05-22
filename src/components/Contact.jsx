@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaEnvelope, FaGithub, FaLinkedinIn, FaPhone, FaInstagram } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedinIn, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import portfolioData from '../data/portfolioData';
 
 const Contact = () => {
@@ -32,11 +32,11 @@ const Contact = () => {
 
               <div className="contact-method">
                 <div className="contact-icon">
-                  <FaPhone />
+                  <FaWhatsapp />
                 </div>
                 <div className="contact-details">
-                  <h4>Phone</h4>
-                  <a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a>
+                  <h4>WhatsApp</h4>
+                  <a href={`https://wa.me/${contact.phone.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer">{contact.phone}</a>
                 </div>
               </div>
             </div>
