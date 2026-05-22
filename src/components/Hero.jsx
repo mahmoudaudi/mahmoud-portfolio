@@ -46,7 +46,7 @@ const Hero = () => {
               <a href="#projects" className="btn-primary-modern">
                 View Projects <FaArrowRight />
               </a>
-              <a href="https://wa.me/96179116139" className="btn-secondary-modern" target="_blank" rel="noopener noreferrer">
+              <a href="#contact" className="btn-secondary-modern">
                 <FaWhatsapp /> Contact
               </a>
             </div>
