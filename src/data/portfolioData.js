@@ -150,8 +150,10 @@ const portfolioData = {
   },
   contact: {
     email: 'ma.audi25@gmail.com',
+    phone: '+961 79 116 139',
     github: 'mahmoudaudi',
     linkedin: 'mahmoud-audi-a5985a352',
+    instagram: 'm7moud_3udi',
     headline: "Let's work together",
     subtext:
       'Open to internships, junior developer roles, and collaborative projects. Reach out by email or connect on GitHub and LinkedIn.'

@@ -1,11 +1,12 @@
 import React from 'react';
-import { FaGithub, FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn, FaEnvelope, FaInstagram } from 'react-icons/fa';
 import portfolioData from '../data/portfolioData';
 
 const Footer = () => {
   const { hero, contact, footer } = portfolioData;
   const githubUrl = `https://github.com/${contact.github}`;
   const linkedinUrl = `https://www.linkedin.com/in/${contact.linkedin}`;
+  const instagramUrl = `https://instagram.com/${contact.instagram}`;
 
   return (
     <footer className="footer">
@@ -47,6 +48,9 @@ const Footer = () => {
               </a>
               <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
                 <FaLinkedinIn />
+              </a>
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+                <FaInstagram />
               </a>
               <a href={`mailto:${contact.email}`}>
                 <FaEnvelope />
