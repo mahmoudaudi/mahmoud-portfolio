@@ -22,7 +22,7 @@ const portfolioData = {
     ],
     social: [
       { label: 'GitHub', href: 'https://github.com/mahmoudaudi', icon: 'github' },
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mahmoud-audi-a5985a352', icon: 'linkedin' }
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mahmoud-audi', icon: 'linkedin' }
     ],
     availability: 'Open to collaborative learning projects'
   },
@@ -152,7 +152,7 @@ const portfolioData = {
     email: 'ma.audi25@gmail.com',
     phone: '+961 79 116 139',
     github: 'mahmoudaudi',
-    linkedin: 'mahmoud-audi-a5985a352',
+    linkedin: 'mahmoud-audi',
     instagram: 'm7moud_3udi',
     headline: "Let's work together",
     subtext:
