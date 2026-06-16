@@ -37,6 +37,7 @@ const Skills = () => {
               key={group.title}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
+              whileHover={{ y: -6 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`bento-card-modern item-${index}`}
             >

@@ -1,7 +1,7 @@
 // Landing section: name, animated role text, intro copy, and CTA buttons.
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { FaArrowRight, FaEnvelope } from 'react-icons/fa';
 import portfolioData from '../data/portfolioData';
 import '../styles/Hero.css';
@@ -18,6 +18,26 @@ const Hero = () => {
     });
     return () => typed.destroy();
   }, []);
+
+  // Tracks the cursor over the code card and turns that into a subtle 3D tilt
+  const tiltRef = useRef(null);
+  const rotateX = useMotionValue(0);
+  const rotateY = useMotionValue(0);
+  const springRotateX = useSpring(rotateX, { stiffness: 150, damping: 18 });
+  const springRotateY = useSpring(rotateY, { stiffness: 150, damping: 18 });
+
+  const handleTiltMove = (event) => {
+    const rect = tiltRef.current.getBoundingClientRect();
+    const relativeX = (event.clientX - rect.left) / rect.width - 0.5;
+    const relativeY = (event.clientY - rect.top) / rect.height - 0.5;
+    rotateY.set(relativeX * 14);
+    rotateX.set(relativeY * -14);
+  };
+
+  const handleTiltLeave = () => {
+    rotateX.set(0);
+    rotateY.set(0);
+  };
 
   return (
     <section className="hero" id="home">
@@ -57,13 +77,20 @@ const Hero = () => {
 
           {/* Right: code card */}
           <motion.div
+            ref={tiltRef}
             className="hero-accent3d-modern"
             aria-hidden="true"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.3 }}
+            onMouseMove={handleTiltMove}
+            onMouseLeave={handleTiltLeave}
+            style={{ perspective: 800 }}
           >
-            <div className="hero-code-card">
+            <motion.div
+              className="hero-code-card"
+              style={{ rotateX: springRotateX, rotateY: springRotateY }}
+            >
               <div className="hcc-header">
                 <span className="hcc-dot" style={{ background: '#ff5f56' }}></span>
                 <span className="hcc-dot" style={{ background: '#ffbd2e' }}></span>
@@ -89,7 +116,7 @@ const Hero = () => {
                   <span className="hcc-stat-label">Projects</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
 
         </div>

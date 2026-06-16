@@ -18,7 +18,7 @@ const portfolioData = {
     highlights: [
       'Applied ML work grounded in Python, Jupyter, and Colab for cybersecurity datasets.',
       'Practical web and backend systems delivered with strong CS fundamentals.',
-      'Learning React and Flutter to keep the frontend and mobile toolkits modern.'
+      'Learning React to keep the frontend toolkit modern.'
     ],
     social: [
       { label: 'GitHub', href: 'https://github.com/mahmoudaudi', icon: 'github' },
@@ -34,7 +34,7 @@ const portfolioData = {
       'My work includes applied machine learning on cybersecurity datasets using Python and notebooks (Jupyter/Colab).',
       'I enjoy building practical systems, from dashboards and management tools to data-driven experiments.',
       'These efforts stay grounded in solid CS fundamentals like algorithms, data structures, and databases.',
-      'I am currently learning React for modern frontend development and Flutter for mobile apps through self-study.'
+      'I am currently learning React for modern frontend development through self-study.'
     ]
   },
   skills: [
@@ -61,7 +61,7 @@ const portfolioData = {
     {
       title: 'Currently Learning',
       description: 'Growth areas',
-      items: ['React', 'Flutter']
+      items: ['React']
     },
     {
       title: 'Familiar / Introductory',

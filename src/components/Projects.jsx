@@ -83,7 +83,11 @@ const Projects = () => {
                 </div>
               </div>
 
-              <div className={`project-mockup-modern ${project.media ? 'has-media' : ''}`}>
+              <motion.div
+                whileHover={{ y: -6, scale: 1.015 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                className={`project-mockup-modern ${project.media ? 'has-media' : ''}`}
+              >
                 <div className="browser-header-modern">
                   <div className="browser-dot-modern dot-red"></div>
                   <div className="browser-dot-modern dot-yellow"></div>
@@ -154,7 +158,7 @@ const Projects = () => {
                     </div>
                   )}
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
