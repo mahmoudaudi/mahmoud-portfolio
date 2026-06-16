@@ -1,0 +1,109 @@
+/* Styles for Skills.jsx — bento grid of skill/focus cards */
+
+.skills-modern {
+  padding: clamp(3rem, 7vw, 5rem) 0;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-light);
+}
+
+.bento-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.bento-card-modern {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-2xl);
+  padding: 2rem 2.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth),
+    transform var(--transition-smooth), background var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-card-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-500), var(--secondary-500));
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+}
+
+.bento-card-modern:hover::before {
+  opacity: 1;
+}
+
+.bento-card-modern:hover {
+  border-color: rgba(var(--accent-rgb), 0.35);
+  background: var(--bg-glass-strong);
+  box-shadow: var(--shadow-md), 0 0 40px rgba(var(--accent-rgb), 0.08);
+  transform: translateY(-3px);
+}
+
+.card-header-modern {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-icon-modern {
+  font-size: 2rem;
+  color: var(--accent-500);
+}
+
+.card-title-modern {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.card-desc-modern {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  min-height: 72px;
+}
+
+.card-tags-modern {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.tag-modern {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  background: rgba(var(--accent-rgb), 0.08);
+  border: 1px solid rgba(var(--accent-rgb), 0.18);
+  border-radius: var(--radius-md);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+.tag-modern-long {
+  width: 100%;
+  white-space: normal;
+}
+
+@media (max-width: 640px) {
+  .bento-grid-modern {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

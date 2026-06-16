@@ -1,0 +1,13 @@
+/* Styles for ScrollProgress.jsx — thin bar showing how far down the page the user has scrolled */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-500), var(--secondary-500));
+  z-index: 10002;
+  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.5);
+  transition: width 0.1s ease-out;
+}

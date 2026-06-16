@@ -1,6 +1,8 @@
+// About section: profile photo alongside a short bio built from portfolioData.
 import React from 'react';
 import portfolioData from '../data/portfolioData';
 import { motion } from 'framer-motion';
+import '../styles/About.css';
 
 const About = () => {
   const { about } = portfolioData;
@@ -9,7 +11,7 @@ const About = () => {
     <section className="about-modern" id="about">
       <div className="container">
         <div className="about-grid-modern">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -17,19 +19,19 @@ const About = () => {
             className="about-image-section"
           >
             <div className="about-image-wrapper">
-               <img 
-                 src="/images/profile.jpg" 
-                 alt="Profile" 
+               <img
+                 src="/images/profile.jpg"
+                 alt="Profile"
                  className="about-image"
                  onError={(e) => {
-                   e.target.onerror = null; 
+                   e.target.onerror = null;
                    e.target.src = "https://placehold.co/600x800/111/fff?text=About+Me";
                  }}
                />
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}

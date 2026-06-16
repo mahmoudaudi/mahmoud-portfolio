@@ -1,6 +1,8 @@
+// Contact section: direct contact methods (email, WhatsApp) and social profiles.
 import React from 'react';
 import { FaEnvelope, FaGithub, FaLinkedinIn, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import portfolioData from '../data/portfolioData';
+import '../styles/Contact.css';
 
 const Contact = () => {
   const { contact } = portfolioData;

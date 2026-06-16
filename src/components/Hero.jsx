@@ -1,11 +1,14 @@
+// Landing section: name, animated role text, intro copy, and CTA buttons.
 import React, { useEffect } from 'react';
 import Typed from 'typed.js';
 import { motion } from 'framer-motion';
 import { FaArrowRight, FaEnvelope } from 'react-icons/fa';
 import portfolioData from '../data/portfolioData';
+import '../styles/Hero.css';
 
 const Hero = () => {
   useEffect(() => {
+    // Cycle through the role strings in the "#typed-role" span on load
     const typed = new Typed('#typed-role', {
       strings: portfolioData.hero.typedRoles,
       typeSpeed: 50,

@@ -1,0 +1,13 @@
+/* Styles for ErrorBoundary.jsx — fallback screen shown if a child component throws */
+
+.error-fallback {
+  background: #0b0f17;
+  color: #e2e8f0;
+  padding: 4rem 2rem;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}

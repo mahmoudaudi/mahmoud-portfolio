@@ -1,7 +1,10 @@
+// Projects section: featured work, the robotics highlight, additional and
+// in-progress projects, plus a lightbox for viewing project media full-size.
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaLink } from 'react-icons/fa';
 import portfolioData from '../data/portfolioData';
+import '../styles/Projects.css';
 
 const linkIcon = (label) => {
   const l = (label || '').toLowerCase();
@@ -11,6 +14,7 @@ const linkIcon = (label) => {
 };
 
 const Projects = () => {
+  // Tracks which image/video is open in the lightbox (null when closed)
   const [selectedMedia, setSelectedMedia] = useState(null);
   const { projects } = portfolioData;
   const roboticsProject = projects.featured.find((project) => project.id === 'robotics-competition');
@@ -19,6 +23,7 @@ const Projects = () => {
   useEffect(() => {
     if (!selectedMedia) return undefined;
 
+    // Let Escape close the lightbox while it's open
     const onKeyDown = (event) => {
       if (event.key === 'Escape') setSelectedMedia(null);
     };

@@ -1,7 +1,9 @@
+// Skills section: a bento grid of skill/focus groups, animated in once visible.
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { HiOutlineCode, HiOutlineBeaker, HiOutlineShieldCheck, HiOutlineLightningBolt, HiOutlineGlobeAlt } from 'react-icons/hi';
 import portfolioData from '../data/portfolioData';
+import '../styles/Skills.css';
 
 const getIcon = (title) => {
   switch (title.toLowerCase()) {
@@ -15,6 +17,7 @@ const getIcon = (title) => {
 };
 
 const Skills = () => {
+  // Ref + useInView trigger the card entrance animation only once, when the section scrolls into view
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 

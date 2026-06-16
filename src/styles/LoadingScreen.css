@@ -1,0 +1,21 @@
+/* Styles for LoadingScreen.jsx — full-screen spinner shown until content is ready */
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.loading-spinner {
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--border-medium);
+  border-top-color: var(--accent-500);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}

@@ -1,6 +1,8 @@
+// Site footer: tagline, quick links, services list, and social icons.
 import React from 'react';
 import { FaGithub, FaLinkedinIn, FaEnvelope, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import portfolioData from '../data/portfolioData';
+import '../styles/Footer.css';
 
 const Footer = () => {
   const { hero, contact, footer } = portfolioData;

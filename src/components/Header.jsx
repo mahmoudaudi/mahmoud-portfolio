@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react';
+// Fixed top navigation: logo, section links, theme toggle, and a mobile menu
+// that closes itself on outside clicks or when a link is chosen.
+import React, { useEffect, useRef, useState } from 'react';
 import { FaMoon, FaSun, FaBars, FaTimes } from 'react-icons/fa';
 import portfolioData from '../data/portfolioData';
+import '../styles/Header.css';
 
 const NAV_ITEMS = ['home', 'about', 'skills', 'projects', 'contact'];
 
@@ -10,8 +13,13 @@ const Header = ({ theme, toggleTheme }) => {
   const [isMounted, setIsMounted] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
+  // Reference to the <nav> element so we can detect clicks outside of it
+  const navRef = useRef(null);
+
   useEffect(() => {
     setIsMounted(true);
+
+    // Track scroll position to style the header and highlight the active section link
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
       let current = 'home';
@@ -24,6 +32,20 @@ const Header = ({ theme, toggleTheme }) => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return undefined;
+
+    // Close the mobile menu when the user clicks anywhere outside of it
+    const handleOutsideClick = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setIsMobileMenuOpen(false);
+        document.body.style.overflow = '';
+      }
+    };
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => document.removeEventListener('mousedown', handleOutsideClick);
+  }, [isMobileMenuOpen]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -40,12 +62,12 @@ const Header = ({ theme, toggleTheme }) => {
       <div className="header-container">
         <a href="#home" className="logo" onClick={closeMobileMenu}>
           <div className="logo-icon">
-            <img 
-              src="/images/profile.jpg" 
-              alt="MA" 
-              className="logo-image" 
+            <img
+              src="/images/profile.jpg"
+              alt="MA"
+              className="logo-image"
               onError={(e) => {
-                e.target.onerror = null; 
+                e.target.onerror = null;
                 e.target.src = "https://placehold.co/100x100/1e293b/a855f7?text=MA";
               }}
             />
@@ -53,7 +75,7 @@ const Header = ({ theme, toggleTheme }) => {
           <span>{portfolioData.hero.name}</span>
         </a>
 
-        <nav className={`nav ${isMobileMenuOpen ? 'active' : ''}`}>
+        <nav ref={navRef} className={`nav ${isMobileMenuOpen ? 'active' : ''}`}>
           <ul className="nav-menu">
             {NAV_ITEMS.map((item, index) => (
               <li key={item} style={{ animationDelay: `${index * 0.1}s` }}>
@@ -70,8 +92,8 @@ const Header = ({ theme, toggleTheme }) => {
         </nav>
 
         <div className="header-controls">
-          <button 
-            className="theme-toggle" 
+          <button
+            className="theme-toggle"
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
             disabled={!isMounted}
@@ -86,8 +108,8 @@ const Header = ({ theme, toggleTheme }) => {
               <div className="theme-icon-placeholder" />
             )}
           </button>
-          
-          <button 
+
+          <button
             className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
             onClick={toggleMobileMenu}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
