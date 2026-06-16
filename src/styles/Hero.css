@@ -110,6 +110,7 @@
 .hero-cta-group {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 2.5rem;
 }
 

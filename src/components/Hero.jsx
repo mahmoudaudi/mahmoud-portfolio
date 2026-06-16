@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { FaArrowRight, FaEnvelope } from 'react-icons/fa';
+import { FaArrowRight, FaEnvelope, FaDownload } from 'react-icons/fa';
 import portfolioData from '../data/portfolioData';
 import '../styles/Hero.css';
 
@@ -71,6 +71,13 @@ const Hero = () => {
               </a>
               <a href="#contact" className="btn-secondary-modern">
                 <FaEnvelope /> Contact
+              </a>
+              <a
+                href="/Mahmoud-Audi-CV.docx"
+                download="Mahmoud-Audi-CV.docx"
+                className="btn-secondary-modern"
+              >
+                <FaDownload /> Download CV
               </a>
             </div>
           </motion.div>

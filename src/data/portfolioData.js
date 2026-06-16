@@ -7,7 +7,6 @@ const portfolioData = {
     badge: 'Open to Work',
     typedRoles: [
       'Software Developer',
-      'Cyber Security Analyst',
       'Web Developer',
       'Mobile Developer'
     ],
