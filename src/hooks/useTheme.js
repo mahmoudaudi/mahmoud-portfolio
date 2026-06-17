@@ -6,19 +6,18 @@ const useTheme = () => {
   const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
-    // Prefer a previously saved choice, otherwise fall back to the OS setting
-    const savedTheme =
-      localStorage.getItem('theme') ||
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    // On first load, read the saved theme from localStorage (or default to dark) 
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     setTheme(savedTheme);
     document.documentElement.setAttribute('data-theme', savedTheme);
   }, []);
 
+   // Toggle between light and dark themes, saving the preference to localStorage
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme); 
   };
 
   return { theme, toggleTheme };

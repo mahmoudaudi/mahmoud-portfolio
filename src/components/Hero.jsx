@@ -1,18 +1,18 @@
 // Landing section: name, animated role text, intro copy, and CTA buttons.
-import React, { useEffect, useRef } from 'react';
-import Typed from 'typed.js';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { FaArrowRight, FaEnvelope, FaDownload } from 'react-icons/fa';
-import portfolioData from '../data/portfolioData';
-import '../styles/Hero.css';
+import React, { useEffect, useRef } from "react";
+import Typed from "typed.js"; // For the animated role text in the hero section.
+import { motion, useMotionValue, useSpring } from "framer-motion"; // For the 3D tilt effect on the code card.
+import { FaArrowRight, FaEnvelope, FaDownload } from "react-icons/fa"; // For icons in the CTA buttons.
+import portfolioData from "../data/portfolioData";
+import "../styles/Hero.css";
 
 const Hero = () => {
   useEffect(() => {
     // Cycle through the role strings in the "#typed-role" span on load
-    const typed = new Typed('#typed-role', {
+    const typed = new Typed("#typed-role", {
       strings: portfolioData.hero.typedRoles,
-      typeSpeed: 50,
-      backSpeed: 30,
+      typeSpeed: 70,
+      backSpeed: 40,
       loop: true,
       showCursor: false,
     });
@@ -44,7 +44,6 @@ const Hero = () => {
       <div className="mesh-gradient"></div>
       <div className="container">
         <div className="hero-main">
-
           {/* Left: text */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -99,18 +98,50 @@ const Hero = () => {
               style={{ rotateX: springRotateX, rotateY: springRotateY }}
             >
               <div className="hcc-header">
-                <span className="hcc-dot" style={{ background: '#ff5f56' }}></span>
-                <span className="hcc-dot" style={{ background: '#ffbd2e' }}></span>
-                <span className="hcc-dot" style={{ background: '#27c93f' }}></span>
+                <span
+                  className="hcc-dot"
+                  style={{ background: "#ff5f56" }}
+                ></span>
+                <span
+                  className="hcc-dot"
+                  style={{ background: "#ffbd2e" }}
+                ></span>
+                <span
+                  className="hcc-dot"
+                  style={{ background: "#27c93f" }}
+                ></span>
                 <span className="hcc-title">profile.json</span>
               </div>
               <div className="hcc-body">
-                <div className="hcc-line"><span className="hcc-brace">{'{'}</span></div>
-                <div className="hcc-line hcc-indent"><span className="hcc-key">"name"</span><span className="hcc-colon">: </span><span className="hcc-str">"Mahmoud Audi"</span><span className="hcc-comma">,</span></div>
-                <div className="hcc-line hcc-indent"><span className="hcc-key">"role"</span><span className="hcc-colon">: </span><span className="hcc-str">"Software Developer"</span><span className="hcc-comma">,</span></div>
-                <div className="hcc-line hcc-indent"><span className="hcc-key">"focus"</span><span className="hcc-colon">: </span><span className="hcc-str">"ML + Cybersecurity"</span><span className="hcc-comma">,</span></div>
-                <div className="hcc-line hcc-indent"><span className="hcc-key">"openToWork"</span><span className="hcc-colon">: </span><span className="hcc-bool">true</span></div>
-                <div className="hcc-line"><span className="hcc-brace">{'}'}</span></div>
+                <div className="hcc-line">
+                  <span className="hcc-brace">{"{"}</span>
+                </div>
+                <div className="hcc-line hcc-indent">
+                  <span className="hcc-key">"name"</span>
+                  <span className="hcc-colon">: </span>
+                  <span className="hcc-str">"Mahmoud Audi"</span>
+                  <span className="hcc-comma">,</span>
+                </div>
+                <div className="hcc-line hcc-indent">
+                  <span className="hcc-key">"role"</span>
+                  <span className="hcc-colon">: </span>
+                  <span className="hcc-str">"Software Developer"</span>
+                  <span className="hcc-comma">,</span>
+                </div>
+                <div className="hcc-line hcc-indent">
+                  <span className="hcc-key">"focus"</span>
+                  <span className="hcc-colon">: </span>
+                  <span className="hcc-str">"ML + Cybersecurity"</span>
+                  <span className="hcc-comma">,</span>
+                </div>
+                <div className="hcc-line hcc-indent">
+                  <span className="hcc-key">"openToWork"</span>
+                  <span className="hcc-colon">: </span>
+                  <span className="hcc-bool">true</span>
+                </div>
+                <div className="hcc-line">
+                  <span className="hcc-brace">{"}"}</span>
+                </div>
               </div>
               <div className="hcc-stats">
                 <div className="hcc-stat-item">
@@ -125,7 +156,6 @@ const Hero = () => {
               </div>
             </motion.div>
           </motion.div>
-
         </div>
       </div>
       <div className="hero-scroll-indicator">
